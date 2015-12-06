@@ -1,2 +1,2 @@
 # paper-rock-scissors
-Learning project to make paper rock scissors game
+Learning project to make Rock Paper Scissors game.
