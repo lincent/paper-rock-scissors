@@ -24,25 +24,47 @@ def comp_input():
     
 def decide_winner(user, comp):
     if user == comp:
-        print("It is a draw")
+        return 'draw'
     elif user == 'paper' and comp == 'rock':
-        print("User wins")
+        return 'win'
     elif user == 'paper' and comp == 'scissors':
-        print("Computer wins")
+        return 'lose'
     elif user == 'rock' and comp == 'scissors':
-        print("User wins")
+        return 'win'
     elif user == 'rock' and comp == 'paper':
-        print("Computer wins")
+        return 'lose'
     elif user == 'scissors' and comp == 'paper':
-        print("User wins")
+        return 'win'
     elif user == 'scissors' and comp == 'rock':
-        print("Computer wins")
-    return
+        return 'lose'
 
-user = user_input()
-comp = comp_input()
 
-print("User plays " + user)
-print("Computer plays " + comp)
+rounds = int(input("How many rounds would you like to play? "))
+print()
 
-decide_winner(user, comp)
+a = 1
+comp_score = 0
+user_score = 0
+
+while a <= rounds:
+    print("Round " + str(a))
+    user = user_input()
+    comp = comp_input()
+
+    print("You played " + user + " : Computer plays " + comp)
+
+    game_res = decide_winner(user, comp)
+    
+    if game_res == 'win':
+        user_score += 1
+    elif game_res == 'lose':
+        comp_score += 1
+    elif game_res == 'draw':
+        a -= 1
+    
+    print("You " + game_res)
+    print("You " + str(user_score) + " : Computer " + str(comp_score))
+    print()    
+    
+    a += 1
+print("Final Score: You " + str(user_score) + " : Computer " + str(comp_score))
