@@ -24,25 +24,31 @@ def comp_input():
     
 def decide_winner(user, comp):
     if user == comp:
-        print("It is a draw")
+        return 'draw'
     elif user == 'paper' and comp == 'rock':
-        print("You win")
+        return 'win'
     elif user == 'paper' and comp == 'scissors':
-        print("Computer wins")
+        return 'lose'
     elif user == 'rock' and comp == 'scissors':
-        print("You win")
+        return 'win'
     elif user == 'rock' and comp == 'paper':
-        print("Computer wins")
+        return 'lose'
     elif user == 'scissors' and comp == 'paper':
-        print("You win")
+        return 'win'
     elif user == 'scissors' and comp == 'rock':
-        print("Computer wins")
-    return
+        return 'lose'
 
-user = user_input()
-comp = comp_input()
 
-print("You played " + user)
-print("Computer plays " + comp)
+rounds = int(input("How many rounds would you like to play? "))
+a = 1
+while a <= rounds:
+    print("Round " + str(a))
+    user = user_input()
+    comp = comp_input()
 
-decide_winner(user, comp)
+    print("You played " + user + " : Computer plays " + comp)
+
+    game_res = decide_winner(user, comp)
+    print("You " + game_res)
+    print()
+    a += 1
