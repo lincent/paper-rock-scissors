@@ -26,15 +26,15 @@ def decide_winner(user, comp):
     if user == comp:
         print("It is a draw")
     elif user == 'paper' and comp == 'rock':
-        print("User wins")
+        print("You win")
     elif user == 'paper' and comp == 'scissors':
         print("Computer wins")
     elif user == 'rock' and comp == 'scissors':
-        print("User wins")
+        print("You win")
     elif user == 'rock' and comp == 'paper':
         print("Computer wins")
     elif user == 'scissors' and comp == 'paper':
-        print("User wins")
+        print("You win")
     elif user == 'scissors' and comp == 'rock':
         print("Computer wins")
     return
@@ -42,7 +42,7 @@ def decide_winner(user, comp):
 user = user_input()
 comp = comp_input()
 
-print("User plays " + user)
+print("You played " + user)
 print("Computer plays " + comp)
 
 decide_winner(user, comp)
