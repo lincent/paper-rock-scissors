@@ -40,7 +40,12 @@ def decide_winner(user, comp):
 
 
 rounds = int(input("How many rounds would you like to play? "))
+print()
+
 a = 1
+comp_score = 0
+user_score = 0
+
 while a <= rounds:
     print("Round " + str(a))
     user = user_input()
@@ -49,6 +54,17 @@ while a <= rounds:
     print("You played " + user + " : Computer plays " + comp)
 
     game_res = decide_winner(user, comp)
+    
+    if game_res == 'win':
+        user_score += 1
+    elif game_res == 'lose':
+        comp_score += 1
+    elif game_res == 'draw':
+        a -= 1
+    
     print("You " + game_res)
-    print()
+    print("You " + str(user_score) + " : Computer " + str(comp_score))
+    print()    
+    
     a += 1
+print("Final Score: You " + str(user_score) + " : Computer " + str(comp_score))
