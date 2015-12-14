@@ -62,9 +62,17 @@ while a <= rounds:
     elif game_res == 'draw':
         a -= 1
     
-    print("You " + game_res)
+    print("You " + game_res + " the round")
     print("You " + str(user_score) + " : Computer " + str(comp_score))
-    print()    
+    print()
     
+    if rounds % 2 != 0:
+        if comp_score >= rounds / 2 or user_score >= rounds / 2:
+            print("We have a winner!")
+            a = rounds + 1
+    else:
+        if comp_score > rounds / 2 or user_score > rounds / 2:
+            print("We have a winner!")
+            a = rounds + 1
     a += 1
 print("Final Score: You " + str(user_score) + " : Computer " + str(comp_score))
